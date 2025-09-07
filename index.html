@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>ClubePet Itaúna • Creche e Hotel com amor e segurança</title>
+  <meta name="description" content="ClubePet Itaúna — creche e hotel para cães com muito amor, segurança e transparência. Agende uma visita e conheça nossa rotina." />
+  <meta name="theme-color" content="#19A7CE" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ClubePet Itaúna • Creche e Hotel com amor e segurança" />
+  <meta property="og:description" content="Apresentação do ClubePet Itaúna: profissional apaixonada, estrutura segura, relatórios e fotos do seu pet. Agende uma avaliação gratuita!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo-clube-pet.png" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-green:#B8E11F; /* verde da pata/coração */
+      --brand-blue:#19A7CE;  /* faixa azul do logo */
+      --brand-dark:#0F172A;
+      --brand-text:#0B1220;
+      --brand-muted:#6B7280;
+      --bg:#F7FAFC;
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(16,24,40,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:var(--brand-text);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Header */
+    .header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eef2f7}
+    .container{width:min(1120px,92vw);margin:0 auto}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand img{width:42px;height:42px}
+    .brand span{letter-spacing:.3px}
+    .menu{display:flex;gap:26px;align-items:center}
+    .menu a{font-weight:500;color:#334155}
+    .menu a:hover{color:var(--brand-blue)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:999px;padding:12px 18px;font-weight:600;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--brand-blue),#47C8E2);color:#fff;box-shadow:0 8px 24px rgba(25,167,206,.25)}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:transparent;border:2px solid #e5e7eb}
+
+    .hamb{display:none;background:none;border:none}
+    .hamb span{display:block;width:24px;height:2px;background:#1f2937;margin:5px 0;border-radius:2px}
+
+    /* Hero */
+    .hero{position:relative;isolation:isolate;background:radial-gradient(1200px 500px at 20% 0, rgba(184,225,31,.18), transparent 50%),
+                                 radial-gradient(1000px 400px at 80% 0, rgba(25,167,206,.18), transparent 60%),
+                                 linear-gradient(#fff,#f9fbff)}
+    .hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center;padding:52px 0 28px}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:#ECFEFF;color:#0369A1;border:1px solid #CFFAFE;padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px}
+    .title{font-size:44px;line-height:1.1;margin:14px 0 10px;font-weight:800}
+    .title em{background:linear-gradient(135deg,var(--brand-green),#CFFA6E);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{color:#475569;font-size:18px;max-width:52ch}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+    .hero-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+    .chip{background:#fff;border:1px solid #eef2f7;border-radius:999px;padding:10px 14px;display:flex;align-items:center;gap:10px;font-weight:600;box-shadow:var(--shadow)}
+
+    .hero-figure{position:relative}
+    .card{background:#fff;border:1px solid #eef2f7;border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+    .card + .card{margin-top:14px}
+    .stat{display:flex;align-items:center;gap:12px}
+
+    /* foto ao lado do texto no hero */
+    .pro-foto{width:160px;height:120px;object-fit:cover;border-radius:12px;border:1px solid #eef2f7;box-shadow:var(--shadow)}
+    @media (max-width: 960px){
+      .hero-wrap{grid-template-columns:1fr;gap:18px}
+      .hero-points{grid-template-columns:1fr 1fr}
+      .hero-figure .pro-foto{grid-column:1 / -1;width:100%;height:200px;margin-top:10px}
+    }
+
+    /* Sections */
+    section{padding:72px 0}
+    .section-title{font-size:32px;margin:0 0 12px}
+    .section-sub{color:#64748b;margin:0 0 28px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .tile{background:#fff;border:1px solid #eef2f7;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .tile h3{margin:10px 0 6px}
+    .tag{display:inline-block;background:#F1F5F9;color:#0f172a;border-radius:8px;padding:6px 10px;font-weight:600;font-size:12px}
+
+    /* Testimonials */
+    .testi{background:linear-gradient(180deg,#ffffff 0,#f7fbff 100%)}
+    .slider{position:relative;overflow:hidden}
+    .slides{display:flex;transition:transform .6s ease}
+    .depo{min-width:100%;display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+    .quote{background:#fff;border:1px solid #eef2f7;border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+    .stars{color:#F59E0B}
+    .slider-nav{margin-top:12px;display:flex;gap:8px;justify-content:center}
+    .dot{width:10px;height:10px;border-radius:50%;background:#cbd5e1}
+    .dot.active{background:var(--brand-blue)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{border-radius:12px;height:160px;object-fit:cover;width:100%}
+
+    /* FAQ */
+    .faq-item{background:#fff;border:1px solid #eef2f7;border-radius:14px;margin:10px 0;padding:16px;box-shadow:var(--shadow)}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:700;cursor:pointer}
+    .faq-a{color:#4b5563;display:none;margin-top:8px}
+
+    /* CTA bar */
+    .bar{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .whats{background:#25D366}
+    .whats:hover{filter:brightness(1.05)}
+
+    /* Footer */
+    footer{background:#0b1220;color:#e5e7eb;padding:42px 0;margin-top:40px}
+    footer a{color:#e5e7eb}
+
+    /* Responsive (restante) */
+    @media (max-width: 960px){
+      .menu{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;padding:12px 20px;border-bottom:1px solid #eef2f7}
+      .menu.open{display:flex;flex-direction:column}
+      .hamb{display:block}
+      .grid-3{grid-template-columns:1fr}
+      .grid-4{grid-template-columns:1fr 1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="ClubePet Itaúna">
+        <img src="assets/logo-clube-pet.png" alt="ClubePet Itaúna logo" width="42" height="42">
+        <span>ClubePet Itaúna</span>
+      </a>
+      <nav id="menu" class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn-ghost" href="#contato">Agendar avaliação</a>
+        <a class="btn btn-primary" href="https://wa.me/5537998374784?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20o%20Clube%20Pet!" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </nav>
+      <button class="hamb" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero-wrap">
+      <div>
+        <span class="badge">💚 Amor + 🔐 Segurança + 📸 Transparência</span>
+        <h1 class="title">Cuidamos do seu pet <em>como da família</em>.</h1>
+        <p class="subtitle">No Clube Pet, cada brincadeira, cada descanso e cada refeição são feitos com carinho e responsabilidade. Você recebe atualizações e fotos, e seu pet vive uma rotina enriquecedora e segura.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contato">Agendar avaliação gratuita</a>
+          <a class="btn btn-ghost" href="#sobre">Conhecer a nossa proposta</a>
+        </div>
+        <div class="hero-points">
+          <div class="chip">🩺 Veterinário parceiro</div>
+          <div class="chip">🎥 Monitoramento e relatórios</div>
+          <div class="chip">🏡 Ambiente climatizado</div>
+        </div>
+      </div>
+
+      <div class="hero-figure">
+        <div class="card">
+          <div class="stat"><strong>2.000+</strong> dias felizes de creche</div>
+          <div class="stat"><strong>500+</strong> hospedagens seguras</div>
+          <div class="stat"><strong>98%</strong> dos tutores recomendam 💙</div>
+        </div>
+
+        <!-- Card com SVG inline (sem arquivo externo) e foto existente -->
+        <div class="card" style="display:grid;grid-template-columns:80px 1fr 160px;gap:14px;align-items:center">
+          <!-- Pata (SVG inline) -->
+          <svg width="80" height="80" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="16" cy="20" r="8" fill="var(--brand-green)"/>
+            <circle cx="30" cy="14" r="8" fill="var(--brand-green)"/>
+            <circle cx="46" cy="20" r="8" fill="var(--brand-green)"/>
+            <circle cx="24" cy="34" r="8" fill="var(--brand-green)"/>
+            <path d="M32 30c10 0 18 8 18 18 0 2-2 4-4 4H18c-2 0-4-2-4-4 0-10 8-18 18-18z" fill="var(--brand-green)"/>
+          </svg>
+
+          <div>
+            <strong>Profissional apaixonada</strong>
+            <p style="margin:4px 0 0;color:#64748b">Profissionais treinados em comportamento canino e manejo positivo.</p>
+          </div>
+
+          <img class="pro-foto" src="assets/profissional-apaixonada.png" alt="Profissional apaixonada com os cães" width="160" height="120" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Quem somos</h2>
+      <p class="section-sub">Somos um espaço de <strong>creche e hotel</strong> criado por amantes de pets para tutores exigentes. Acreditamos que rotina, afeto e segurança geram bem-estar. Nosso propósito é que você tenha <em>tranquilidade</em> e seu pet, <em>dias inesquecíveis</em>.</p>
+      <div class="grid-3">
+        <div class="tile">
+          <span class="tag">Compromisso</span>
+          <h3>Transparência total</h3>
+          <p>Relatórios, fotos e comunicação direta. Você acompanha de perto a rotina do seu pet.</p>
+        </div>
+        <div class="tile">
+          <span class="tag">Segurança</span>
+          <h3>Protocolos atualizados</h3>
+          <p>Exigimos carteira de vacinação, controle antipulgas e avaliação comportamental.</p>
+        </div>
+        <div class="tile">
+          <span class="tag">Carinho</span>
+          <h3>Manejo positivo</h3>
+          <p>Reforço positivo, enriquecimento ambiental e grupos por perfil e energia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços (sem imagens externas) -->
+  <section id="servicos" style="background:#ffffff">
+    <div class="container">
+      <h2 class="section-title">O que fazemos</h2>
+      <p class="section-sub">Serviços pensados para o bem-estar físico e emocional do seu peludo.</p>
+      <div class="grid-3">
+        <div class="tile">
+          <div style="height:140px;border-radius:12px;background:linear-gradient(135deg,#e0f7ff,#fff)"></div>
+          <h3>Creche</h3>
+          <p>Brincadeiras monitoradas, socialização e atividades de enriquecimento. Período <strong>meio</strong> ou <strong>integral</strong>, com pacotes personalizados.</p>
+        </div>
+        <div class="tile">
+          <div style="height:140px;border-radius:12px;background:linear-gradient(135deg,#fff2f2,#fff)"></div>
+          <h3>Hotel</h3>
+          <p>Hospedagem segura, rotina confortável, monitoramento e muito carinho. Ideal para feriados e viagens.</p>
+        </div>
+        <div class="tile">
+          <div style="height:140px;border-radius:12px;background:linear-gradient(135deg,#f3ffe0,#fff)"></div>
+          <h3>Cuidados extras</h3>
+          <p>Transporte, adaptação, treinamento básico e acompanhamento com vet parceiro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Por que o Clube Pet?</h2>
+      <p class="section-sub">Pequenos grandes detalhes que fazem a diferença.</p>
+      <div class="grid-4">
+        <div class="tile"><h3>📸 Relatórios e fotos</h3><p>Você recebe registros do dia e acompanha a rotina.</p></div>
+        <div class="tile"><h3>🧠 Enriquecimento</h3><p>Atividades sensoriais e cognitivas para gastar energia da melhor forma.</p></div>
+        <div class="tile"><h3>🧴 Higiene & CLIM</h3><p>Ambiente higienizado, climatizado e com áreas separadas.</p></div>
+        <div class="tile"><h3>🛟 Atendimento humano</h3><p>Estamos sempre por perto, com escuta ativa e retorno rápido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos (sem imagens externas) -->
+  <section id="depoimentos" class="testi">
+    <div class="container">
+      <h2 class="section-title">O que os tutores dizem</h2>
+      <p class="section-sub">Prova social real: carinho, confiança e resultados que aparecem no comportamento.</p>
+      <div class="slider" id="slider">
+        <div class="slides">
+          <div class="depo">
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>“Meu doguinho chega em casa cansado e feliz! A equipe envia fotos e me deixa super tranquila durante o dia.”</p>
+              <strong>— Ana & Thor</strong>
+            </div>
+          </div>
+          <div class="depo">
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>“Viagem sem culpa! A hospedagem foi impecável e recebi updates todos os dias. Viramos clientes.”</p>
+              <strong>— Bruno & Nina</strong>
+            </div>
+          </div>
+          <div class="depo">
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>“Adorei o cuidado com a adaptação. Respeitaram o tempo do meu cão e hoje ele ama a creche.”</p>
+              <strong>— Carla & Bob</strong>
+            </div>
+          </div>
+        </div>
+        <div class="slider-nav" id="dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria (reutiliza a foto existente para não quebrar) -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Momentos que aquecem o coração 💛</h2>
+      <p class="section-sub">Um pouquinho do nosso dia a dia. Para ver mais, acompanhe no Instagram!</p>
+      <div class="gallery">
+        <img src="assets/profissional-apaixonada.png" alt="Galeria 1" />
+        <img src="assets/profissional-apaixonada.png" alt="Galeria 2" />
+        <img src="assets/profissional-apaixonada.png" alt="Galeria 3" />
+        <img src="assets/profissional-apaixonada.png" alt="Galeria 4" />
+        <img src="assets/profissional-apaixonada.png" alt="Galeria 5" />
+        <img src="assets/profissional-apaixonada.png" alt="Galeria 6" />
+      </div>
+      <div style="margin-top:14px">
+        <a class="btn btn-primary" href="https://instagram.com/clubepetitauna" target="_blank" rel="noopener">Ver no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Dúvidas frequentes</h2>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quais são os pré-requisitos? <span>+</span></div>
+        <div class="faq-a">Carteira de vacinação em dia, controle antipulgas e avaliação comportamental.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como funciona a adaptação? <span>+</span></div>
+        <div class="faq-a">Apresentação gradual, acompanhamento individual e grupo compatível com o perfil do seu pet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Vocês enviam fotos? <span>+</span></div>
+        <div class="faq-a">Sim! Você recebe registros e atualizações do dia do seu pet 💙</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" style="background:#ffffff">
+    <div class="container">
+      <h2 class="section-title">Vamos conversar?</h2>
+      <p class="section-sub">Agende uma visita e conheça de perto nossa estrutura. Será um prazer receber você e seu peludo!</p>
+      <div class="grid-3">
+        <div class="tile">
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/5537998374784" target="_blank" rel="noopener">+55 37 99837-4784</a></p>
+        </div>
+        <div class="tile">
+          <h3>Endereço</h3>
+          <p>R. Quinze de Novembro, 1519 — Piedade, Itaúna - MG, 35680-258</p>
+        </div>
+        <div class="tile">
+          <h3>Horários</h3>
+          <p>Seg a Sex: 7h às 19h · Sáb: 8h às 12h</p>
+        </div>
+      </div>
+      <div style="margin-top:16px;border-radius:14px;overflow:hidden;border:1px solid #eef2f7">
+        <iframe
+          title="Mapa"
+          src="https://www.google.com/maps?q=R.%20Quinze%20de%20Novembro%2C%201519%20-%20Piedade%2C%20Ita%C3%BAna%20-%20MG%2C%2035680-258&output=embed"
+          width="100%" height="320" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="assets/logo-clube-pet.png" alt="Clube Pet" width="36" height="36">
+        <strong>ClubePet Itaúna</strong>
+      </div>
+      <div>
+        <a href="https://instagram.com/clubepetitauna" target="_blank" style="margin-right:12px">Instagram</a>
+        <a href="https://wa.me/5537998374784" target="_blank">WhatsApp</a>
+      </div>
+      <div>© <span id="year"></span> ClubePet Itaúna — Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Barra fixa (apenas WhatsApp; sem 'vagas limitadas') -->
+  <div class="bar" aria-hidden="false">
+    <a class="btn whats" style="color:#fff" href="https://wa.me/5537998374784?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Clube%20Pet" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+  </div>
+
+  <!-- JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PetStore",
+    "name": "ClubePet Itaúna",
+    "image": "assets/logo-clube-pet.png",
+    "url": "https://SEU_SITE/",
+    "telephone": "+55-37-99837-4784",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Quinze de Novembro, 1519",
+      "addressLocality": "Itaúna",
+      "addressRegion": "MG",
+      "postalCode": "35680-258",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://instagram.com/clubepetitauna"]
+  }
+  </script>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ toggle
+    function toggleFaq(el){
+      const a = el.nextElementSibling;
+      a.style.display = a.style.display === 'block' ? 'none' : 'block';
+      el.querySelector('span').textContent = a.style.display === 'block' ? '−' : '+';
+    }
+
+    // Slider simples (depoimentos)
+    const slider = document.querySelector('#slider .slides');
+    const slides = Array.from(slider.children);
+    const dotsC = document.getElementById('dots');
+    let idx = 0;
+    slides.forEach((_,i)=>{
+      const d=document.createElement('span');
+      d.className='dot'+(i===0?' active':'');
+      d.addEventListener('click',()=>go(i));
+      dotsC.appendChild(d);
+    });
+    function go(n){
+      idx=n;
+      slider.style.transform = `translateX(${-100*idx}%)`;
+      dotsC.querySelectorAll('.dot').forEach((e,i)=>e.classList.toggle('active',i===idx));
+    }
+    setInterval(()=>{idx=(idx+1)%slides.length;go(idx);}, 5500);
+  </script>
+</body>
+</html>
