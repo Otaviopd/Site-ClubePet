@@ -566,8 +566,8 @@
           <div class="depo">
             <div class="quote">
               <div class="stars">★★★★★</div>
-              <p>“Ao @clubepetitauna agradeço pela melhor receptividade do mundo, que sempre recebe com tanto amor, carinho e aconchego, as minhas meninas 🐶”</p>
-              <strong>— Karla Cristina Lima</strong>
+              <p>“Este carinho da tia Brenda não tem igual, o melhor hotelzinho da cidade. Zequinha já está morrendo de saudades.”</p>
+              <strong>— Bruna Cristina</strong>
             </div>
           </div>
           <div class="depo">
@@ -580,8 +580,8 @@
           <div class="depo">
             <div class="quote">
               <div class="stars">★★★★★</div>
-              <p>“Este carinho da tia Brenda não tem igual. O melhor hotelzinho da cidade! Zequinha, já estou morrendo de saudades.”</p>
-              <strong>— Bruna Cristina</strong>
+              <p>“Agradeço pela melhor receptividade do mundo, que sempre recebe com tanto amor, carinho e aconchego, as minhas meninas.”</p>
+              <strong>— Karla Cristina Lima</strong>
             </div>
           </div>
         </div>
@@ -780,18 +780,60 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center">
-      <div style="display:flex;align-items:center;gap:10px">
-        <img src="assets/logo-clube-pet.png.jpg.jpg" alt="Clube Pet" width="36" height="36">
-        <strong>ClubePet Itaúna</strong>
+    <div class="container">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;margin-bottom:30px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="assets/logo-clube-pet.png.jpg.jpg" alt="Clube Pet" width="36" height="36">
+          <strong>ClubePet Itaúna</strong>
+        </div>
+        <div>
+          <a href="https://instagram.com/clubepetitauna" target="_blank" style="margin-right:12px">Instagram</a>
+          <a href="https://wa.me/5537998374784" target="_blank">WhatsApp</a>
+        </div>
+        <div>© <span id="year"></span> ClubePet Itaúna — Todos os direitos reservados.</div>
       </div>
-      <div>
-        <a href="https://instagram.com/clubepetitauna" target="_blank" style="margin-right:12px">Instagram</a>
-        <a href="https://wa.me/5537998374784" target="_blank">WhatsApp</a>
+      
+      <!-- Política de Privacidade -->
+      <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;text-align:center">
+        <p style="font-size:14px;color:rgba(255,255,255,0.8);margin:0">
+          Ao utilizar nosso site, você concorda com nossos <a href="#" style="color:#B8E11F;text-decoration:none" onclick="showTerms()">Termos de Uso</a> e Política de Privacidade.
+        </p>
       </div>
-      <div>© <span id="year"></span> ClubePet Itaúna — Todos os direitos reservados.</div>
     </div>
   </footer>
+
+  <!-- Modal de Termos de Uso -->
+  <div id="termsModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;overflow-y:auto;padding:40px 20px">
+    <div style="max-width:800px;margin:40px auto;background:#fff;border-radius:12px;padding:30px;position:relative">
+      <button onclick="closeTerms()" style="position:absolute;top:15px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#666">&times;</button>
+      <h2 style="color:#19A7CE;margin-bottom:20px">📄 Termos de Uso - Clube Pet</h2>
+      <div style="max-height:60vh;overflow-y:auto;padding-right:10px">
+        <p>Ao utilizar o site do Clube Pet, você concorda com os seguintes termos:</p>
+        
+        <h3 style="margin:25px 0 10px;color:#0F172A">🔹 1. Uso do Site</h3>
+        <p>O site deve ser utilizado apenas para fins lícitos e relacionados aos serviços oferecidos (hotel, creche e cuidados para pets).</p>
+        <p>É proibido o uso para atividades fraudulentas, ilegais ou que comprometam o funcionamento do sistema.</p>
+        
+        <h3 style="margin:25px 0 10px;color:#0F172A">🔹 2. Reservas e Serviços</h3>
+        <p>A confirmação de hospedagem ou creche está sujeita à disponibilidade e aos pré-requisitos obrigatórios (vacinas em dia, antipulgas, comportamento adequado).</p>
+        <p>O Clube Pet se reserva o direito de recusar o atendimento se o pet não atender às condições de saúde ou segurança.</p>
+        
+        <h3 style="margin:25px 0 10px;color:#0F172A">🔹 3. Responsabilidade</h3>
+        <p>O Clube Pet se compromete a cuidar do pet com zelo e segurança.</p>
+        <p>Não nos responsabilizamos por informações incorretas fornecidas pelo tutor.</p>
+        <p>O uso de medicamentos, rações especiais e itens pessoais deve ser informado e entregue pelo cliente.</p>
+        
+        <h3 style="margin:25px 0 10px;color:#0F172A">🔹 4. Direitos Autorais</h3>
+        <p>Todo o conteúdo do site (textos, imagens, logotipos, códigos) é de propriedade do Clube Pet e não pode ser reproduzido sem autorização.</p>
+        
+        <h3 style="margin:25px 0 10px;color:#0F172A">🔹 5. Alterações dos Termos</h3>
+        <p>O Clube Pet pode alterar estes Termos a qualquer momento, sendo a nova versão publicada no site.</p>
+      </div>
+      <div style="margin-top:25px;text-align:center">
+        <button onclick="closeTerms()" style="background:#19A7CE;color:white;border:none;padding:10px 25px;border-radius:6px;cursor:pointer;font-weight:600">Fechar</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Barra fixa (apenas WhatsApp; sem 'vagas limitadas') -->
   <div class="bar" aria-hidden="false">
@@ -820,6 +862,26 @@
   </script>
 
   <script>
+    // Funções para o modal de Termos
+    function showTerms() {
+      event.preventDefault();
+      document.getElementById('termsModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeTerms() {
+      document.getElementById('termsModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Fechar modal ao clicar fora do conteúdo
+    window.onclick = function(event) {
+      const modal = document.getElementById('termsModal');
+      if (event.target == modal) {
+        closeTerms();
+      }
+    }
+    
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1033,4 +1095,3 @@
   </script>
 </body>
 </html>
-
