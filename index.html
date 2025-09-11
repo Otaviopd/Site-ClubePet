@@ -115,6 +115,18 @@
       transform: translateY(0);
     }
     
+    /* Impede o overlay de aparecer quando hover no vídeo */
+    .facility-card video:hover + .facility-overlay,
+    .facility-card video:focus + .facility-overlay {
+      transform: translateY(100%);
+    }
+    
+    /* Garante que o vídeo fique acima do overlay */
+    .facility-card video {
+      position: relative;
+      z-index: 10;
+    }
+    
     .facility-overlay h3 {
       font-size: 18px;
       font-weight: 600;
